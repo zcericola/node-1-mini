@@ -1,11 +1,12 @@
 const express = require('express');
-const bodyParser = required('body-parser');
+const bodyParser = require('body-parser');
 
 const port = 3000;
 const app = express();
 
 //generates req.body for us to use
 app.use(bodyParser.json());
+app.use(express.static(__dirname + "/../public/build"));
 
 //importing books_controller
 //must be between app.use and above app.listen

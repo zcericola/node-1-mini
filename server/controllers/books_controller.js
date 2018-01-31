@@ -16,9 +16,11 @@ const create = (req, res, next) => {
 
 const update = (req, res, next) => {
     const updateID = req.params.id;
-    let index = books.findIndex(book => book.id === updateID);
+    let index = books.findIndex(book => book.id == updateID);
+    
 
     books[index] = {
+        
         id: books[index].id,
         title: req.body.title || books[index].title,
         author: req.body.author || books[index].author
